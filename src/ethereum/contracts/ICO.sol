@@ -51,7 +51,7 @@ contract ICO is ERC20Interface{
     mapping (address => uint) public balances;
     mapping(address => mapping(address => uint)) allowed;
 
-    function ICO_Constructor() public {
+    constructor() {
         name = "Demo Coin";
         decimals = 18;
         symbol = "DC";
@@ -78,11 +78,11 @@ contract ICO is ERC20Interface{
         allContributers++;
     }
 
-    function totalSupply() public virtual override view returns (uint) {
+    function totalSupply() public view override returns (uint) {
         return allTokens;
     }
 
-    function balanceOf(address tokenOwner) public override view returns (uint balance) {
+    function balanceOf(address tokenOwner) public view override returns (uint balance) {
         return balances[tokenOwner];
     }
 
@@ -107,15 +107,15 @@ contract ICO is ERC20Interface{
         return true;
     }
  
-    function allowance(address tokenOwner, address spender) public virtual override view returns (uint remaining) {
+    function allowance(address tokenOwner, address spender) public view override returns (uint remaining) {
         return allowed[tokenOwner][spender];
     }
 
-    function myBalance() public virtual view returns (uint) {
+    function myBalance() public view returns (uint) {
         return (balances[msg.sender]);
     }
 
-    function myAddress() public virtual view returns (address) {
+    function myAddress() public view returns (address) {
         address myAdr = msg.sender;
         return myAdr;
     }

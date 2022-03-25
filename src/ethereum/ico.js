@@ -1,8 +1,8 @@
 import web3 from '../web3';
-import newICO from './build/ICO.json';
+import ICO from './build/ICO.json';
 
 const instance = new web3.eth.Contract(
-  newICO.abi, '0x3cb155E1b35C061ce1C06832f097D8DEEeB0eE94'
-  );
+  ICO.abi, '0x1D656815D2C11b82FC9E7F28f25fFa79EDBCA403'
+);
 
 export default instance; 

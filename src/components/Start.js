@@ -17,8 +17,8 @@ state = {
   seconds:''
 }
 
-async componentDidMount(){
 
+async componentDidMount(){
   let contributers = await ico.methods.allContributers().call();
   let totalSupply = await ico.methods.totalSupply().call();
   totalSupply = web3.utils.fromWei(totalSupply, 'ether');

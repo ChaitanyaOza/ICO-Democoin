@@ -5,8 +5,9 @@ const solc = require('solc');
 
 const buildPath = path.resolve(__dirname, 'build');
 fs.removeSync(buildPath);
-const campaignPath = path.resolve(__dirname, 'contracts', 'ICO.sol');
-const source = fs.readFileSync(campaignPath, 'utf8');
+
+const icoPath = path.resolve(__dirname, 'contracts', 'ICO.sol');
+const source = fs.readFileSync(icoPath, 'utf8');
 
 const input = JSON.stringify({
   language: 'Solidity',
